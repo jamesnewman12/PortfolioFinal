@@ -1,0 +1,215 @@
+<!-- header section
+================================================== -->
+<div class="top-header"></div>
+
+
+
+
+<!-- original
+{{#if backToSearchResultsURL}}
+    <a href="{{backToSearchResultsURL}}" class="button medium primary" data-navigo2>Back to Search Results</a>
+{{/if}}
+
+{{#if botDetailsURL}}
+<div>
+	<a href="{{botDetailsURL}}" data-navigo2>Bot Screen</a>
+</div>
+{{/if}}
+
+
+{{#if backToSearchResultsURL}}
+<div>
+	<a href="{{backToSearchResultsURL}}" data-navigo2>Search Results</a>
+</div>
+{{/if}}
+
+<table>
+	<tr>
+		<td>URI</td><td>{{URI}}</td>
+	</tr>
+	<tr>
+		<td>Name</td><td>{{name}}</td>
+	</tr>
+	<tr>
+		<td>Slug</td><td>{{slug}}</td>
+	</tr>
+	<tr>
+		<td>URL</td><td>{{#if url}}<a href="{{url}}" target="_blank">{{url}}</a>{{/if}}</td>
+	</tr>
+	<tr>
+		<td>Endpoint</td><td>{{endpoint}}</td>
+	</tr>
+	<tr>
+		<td>Description</td><td>{{description}}</td>
+	</tr>
+	<tr>
+		<td>Image</td><td>{{#if imageURL}}<img src="{{imageURL}}"/>{{/if}}</td>
+	</tr>
+	<tr>
+		<td>Category</td><td>{{category}}</td>
+	</tr>
+	<tr>
+		<td>Categories</td><td>
+		{{#each categories}}
+			{{this}}{{#unless @last}}<br/>{{/unless}}
+		{{/each}}
+		</td>
+	</tr>
+	<tr>
+		<td>EndpointURI</td><td>{{endpointURI}}</td>
+	</tr>
+	<tr>
+		<td>Promoted</td><td>{{promoted}}</td>
+	</tr>
+	<tr>
+		<td>Published</td><td>{{published}}</td>
+	</tr>
+	<tr>
+		<td>Approved</td><td>{{approved}}</td>
+	</tr>
+</table>
+-->
+
+<div class="newcontent">
+    
+    {{#if descriptionHTML}}
+    
+    <script>
+      
+    function htmlDecode(input){
+        var e = document.createElement('div');
+        e.innerHTML = input;
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    }    
+        
+    
+    var string = "{{descriptionHTML}}"    
+        
+    var htmlString = htmlDecode(string);
+    
+    //$( "#newcontent" ).append( $( htmlString ) )    
+    
+    var mydom = $.parseHTML( htmlString );                           
+    
+    
+    $( ".newcontent" ).after( mydom );
+        
+   
+    </script>
+    
+    {{/if}}
+</div>
+
+
+
+<!-- CONTENT -->
+<div class="content">
+    <!-- POST -->
+    <article class="post">
+        {{#if backToSearchResultsURL}}
+            <a id="back-search-results" href="{{backToSearchResultsURL}}" class="button medium primary" data-navigo2>Back to Search Results</a>
+        {{/if}}
+
+        <!-- POST CONTENT -->
+        <div class="post-content">
+            <!-- POST PARAGRAPH -->
+            <div class="post-paragraph">
+                <div class="comment-wrap">
+                    <!-- USER AVATAR -->
+                    <a href="" class="user-avatar-wrap large">
+                        <figure class="user-avatar large">
+                            {{#if imageURL}}<img src="{{imageURL}}"/>{{else}}<img class="search-result-promo-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="product-image" style="height: 200px; width: 200px;">{{/if}}
+                        </figure>
+                    </a>
+                    <br>
+                    <!-- /USER AVATAR -->
+                </div>
+                <hr class="line-separator">
+                <br>
+                <h3 class="post-title">{{name}}</h3>
+                {{#if promoted}}
+                <div class="pin big featured">Featured</div>
+                {{/if}}
+                {{#if published}}
+                <div class="pin big primary">Published</div>
+                {{/if}}
+                {{#if approved}}
+                <div class="pin big secondary">Approved</div>
+                {{/if}}
+                <p>{{description}}</p>
+
+                <!-- INFORMATION LAYOUT ITEM -->
+                <div class="information-layout-item">
+                <!-- URI -->
+                    <p class="tags primary"><span>URI:</span>
+                    {{#if URI}}<a href="{{URI}}" target="_blank">{{URI}}</a>{{/if}}
+                    </p>
+                <!-- /URI -->
+                <!-- URL Endpoint -->
+                    <p class="tags primary"><span>URL:</span>
+                    {{#if url}}<a href="{{url}}" target="_blank">{{url}}</a>{{/if}}
+                    </p>
+                <!-- /URL Endpoint-->
+                <!-- Endpoint URI -->
+                    {{#if endpointURI}}<p   class="tags primary"><span>Endpoint URI:</span>
+                    <a href="{{endpointURI}}" target="_blank">{{endpointURI}}</a>
+                    </p>{{/if}}
+                <!-- /Endpoint URI -->
+
+                <!-- CATEGORIES -->
+
+                    <p class="tags primary"><span>Categories:</span>
+                    {{#each categories}}
+                        <a href="#">{{this}}</a>{{#unless @last}},{{/unless}}
+                    {{/each}}
+                    </p>
+                </div>
+                <!-- /INFORMATION LAYOUT ITEM -->
+                <!-- /CATEGORIES -->
+                <br>
+                <br>
+                <!--<a href="#" class="button medium secondary">
+                    Facebook Messenger
+                </a>
+
+                <br>
+
+                <a href="#" class="button medium secondary">
+                    Web App
+                </a>-->
+                {{#if botDetailsURL}}
+                    <br>
+                    <a href="{{botDetailsURL}}" class="button medium secondary" data-navigo2>Bot Screen</a>
+                {{/if}}
+            </div>
+            <!-- /POST PARAGRAPH -->
+
+
+
+
+            <div class="clearfix"></div>
+        </div>
+        <!-- /POST CONTENT -->
+
+        <hr class="line-separator">
+
+        <!-- SHARE -->
+        <!--<div class="share-links-wrap">
+            <!--<p class="text-header small">Share this:</p>
+            <!-- SHARE LINKS -->
+            <!--<ul class="share-links hoverable">
+                <li><a href="#" class="fb"></a></li>
+                <li><a href="#" class="twt"></a></li>
+                <li><a href="#" class="db"></a></li>
+                <li><a href="#" class="rss"></a></li>
+                <li><a href="#" class="gplus"></a></li>
+            </ul>-->
+            <!-- /SHARE LINKS -->
+        <!--</div>-->
+        <!-- /SHARE -->
+    </article>
+    <!-- /POST -->
+
+
+</div>
+<!-- CONTENT -->

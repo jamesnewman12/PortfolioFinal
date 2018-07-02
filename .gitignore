@@ -1,0 +1,6 @@
+/conf/*.config
+/logs/
+node_modules/
+/*.sh
+config.config
+

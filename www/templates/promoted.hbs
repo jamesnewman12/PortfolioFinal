@@ -1,0 +1,70 @@
+<h3>Promoted</h3>
+<div class="promoted-entities">
+
+    {{#if promotedError}} {{promotedError}} {{else}} {{#if promotedItems}} {{#each promotedItems}}
+
+    <div class="promoted-item">
+
+        <div class="promoted-item-body">
+
+
+            <!--tab form-->
+            <!-- PRODUCT LIST -->
+
+            <div class="product-list grid column4-wrap">
+                <!-- PRODUCT ITEM -->
+                <div class="product-item column">
+                    <!-- PRODUCT PREVIEW ACTIONS -->
+                    <div class="product-preview-actions">
+                        <!-- PRODUCT PREVIEW IMAGE -->
+                        <figure class="product-preview-image">
+                            {{#if imageURL}}<img class="search-result-image" src="{{imageURL}}" alt="product-image" />{{else}}(no image available){{/if}}
+                        </figure>
+                        <!-- /PRODUCT PREVIEW IMAGE -->
+
+                    </div>
+                    <!-- /PRODUCT PREVIEW ACTIONS -->
+
+                    <!-- PRODUCT INFO -->
+                    <div class="product-info">
+                        <a href="product-page.html">
+                            <p class="text-header">{{name}}</p>
+                        </a>
+                        <p class="product-description">{{description}}</p>
+                        {{#if url}}
+                        <a href="{{url}}" target="_blank">{{url}}</a>{{/if}} {{#if category}}
+                        <p class="category tertiary">{{category}}</p>
+                        {{/if}}
+                        </a>
+                    </div>
+                    <!-- /PRODUCT INFO -->
+                    <hr class="line-separator">
+                    <a href="{{detailsURL}}" data-navigo2>Details</a>
+
+                    <!-- USER RATING -->
+                    <div class="user-rating">
+                        <a href="author-profile.html">
+                            <figure class="user-avatar small">
+                                <img src="images/haley/vitalfavicon.png" alt="user-avatar">
+                            </figure>
+                        </a>
+                        <a href="author-profile.html">
+                            <p class="text-header tiny">Vital AI</p>
+                        </a>
+                    </div>
+                    <!-- /USER RATING -->
+                </div>
+                <!-- /PRODUCT ITEM -->
+
+            </div>
+
+        </div>
+
+        {{/each}}
+
+        <div class="clearer"></div>
+
+        {{else}} (promoted content unavailable) {{/if}} {{/if}}
+
+    </div>
+</div>

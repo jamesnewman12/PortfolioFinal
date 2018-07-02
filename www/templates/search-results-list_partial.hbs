@@ -1,0 +1,134 @@
+<div class="headline tertiary">
+    <h5>{{#if totalResults}}{{totalResults}}{{else}}0{{/if}} Results Found</h4>
+    <h4>offset: {{offset}}, category: {{category}}, limit: {{limit}} query: {{query}}, sortProperty: {{sortProperty}}, sortDirection: {{sortDirection}}</h4>
+</div>
+<!--<p>
+    Total results count: {{totalResults}}, offset: {{offset}}, category: {{category}}, limit: {{limit}} query: {{query}}, sortProperty: {{sortProperty}}, sortDirection: {{sortDirection}}
+</p>-->{{#if results}}
+<div class="section-wrap">
+    <!-- CONTENT -->
+    <div class="product-showcase">
+        <!-- list form -->
+        <!-- /PRODUCT SHOWCASE -->
+        {{#each results}}
+        <!-- PRODUCT SHOWCASE -->
+        <div class="product-showcase">
+            <!-- PRODUCT LIST -->
+            <div class="product-list list">
+                <!-- PRODUCT ITEM -->
+                <div class="product-item">
+                    {{#if promoted}}<span class="pin featured">Featured</span>{{/if}}
+                    <a href="{{detailsURL}}" data-navigo2>
+                        <!-- PRODUCT PREVIEW IMAGE -->
+                        <figure class="product-preview-image small" style="height: 100px; width: 100px;">
+                            {{#if imageURL}}<img class="search-result-image" src="{{imageURL}}" style="height: 100px; width: 100px;"/>{{else}}<img class="search-result-promo-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png" alt="product-image" style="height: 100px; width: 100px;"/>{{/if}}
+                        </figure>
+                        <!-- /PRODUCT PREVIEW IMAGE -->
+                    </a>
+
+                    <!-- PRODUCT INFO -->
+                    <div class="product-info">
+                        <a href="{{detailsURL}}">
+                            <p class="text-header" style="font-size: 18px; font-weight: 600;">{{name}}</p>
+                        </a>
+                        <p class="product-description" style="overflow: scroll; max-height: 160px;">{{description}}</p>
+
+
+                    </div>
+                    <!-- /PRODUCT INFO -->
+
+                    <!-- CATEGORY DATA -->
+                    <div class="author-data">
+                        <p class="category secondary">{{category}}</p>
+                    </div>
+                    <!-- /CATEGORY DATA -->
+                    <!--AUTHOR DATA-->
+                    <div class="author-data">
+                        <!-- USER RATING -->
+                        <!--<div class="user-rating">
+                            <a href="">
+                                <figure class="user-avatar small" style="max-height: 30px; max-width: 30px;">
+                                    <img src="images/haley/vitalfavicon.png" alt="user-avatar">
+                                </figure>
+                            </a>
+                            <a href="">
+                                <p class="text-header tiny">Vital A.I.</p>
+                            </a>
+                        </div>-->
+                        <!-- /USER RATING -->
+                    </div>
+                    <!--/AUTHOR DATA-->
+                </div>
+                <!-- /PRODUCT ITEM -->
+
+            </div>
+            <!-- /PRODUCT LIST -->
+        </div>
+        {{/each}}
+        <!-- /PRODUCT SHOWCASE -->
+
+
+        <!-- PAGER -->
+
+        <div class="pager tertiary">
+            <div class="pager-item">
+                <p>
+                    {{!-- pagination based on properties --}} {{#if firstPageURL}}
+                    <a href="{{firstPageURL}}" data-navigo2>first</a> {{else}}
+                    <span class="disabled">first</span> {{/if}}
+                </p>
+            </div>
+            <div class="pager-item">
+                <p>
+                    {{#if previousPageURL}}
+                    <a href="{{previousPageURL}}" data-navigo2>prev</a> {{else}}
+                    <span class="disabled">prev</span> {{/if}}
+                </p>
+            </div>
+            {{#each pageURLs}} {{#if active}}
+            <div class="pager-item">
+                <p>
+                    <a href="{{pageURL}}" data-navigo2>{{page}}</a>
+                </p>
+            </div>
+            {{else}}
+            <div class="pager-item active">
+                <p>
+                    <span class="disabled">{{page}}</span> </p>
+            </div>{{/if}} {{/each}}
+
+            <div class="pager-item">
+                <p>
+                    {{#if nextPageURL}}
+                    <a href="{{nextPageURL}}" data-navigo2>next</a> {{else}}
+                    <span class="disabled">next</span> {{/if}}
+                </p>
+            </div>
+
+            <div class="pager-item">
+                <p>
+                    {{#if lastPageURL}}
+                    <a href="{{lastPageURL}}" data-navigo2>last</a> {{else}}
+                    <span class="disabled">last</span> {{/if}}
+                </p>
+            </div>
+        </div>
+        <!-- original
+        <div class="pager tertiary">
+            <div class="pager-item active">
+                <p>1</p>
+            </div>
+            <div class="pager-item">
+                <p>2</p>
+            </div>
+            <div class="pager-item">
+                <p>3</p>
+            </div>
+        </div>
+-->
+        <!-- /PAGER -->
+
+    </div>
+</div>
+
+{{else}} (no results) {{/if}}

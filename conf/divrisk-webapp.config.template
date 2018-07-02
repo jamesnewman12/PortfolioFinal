@@ -1,0 +1,55 @@
+
+webserver {
+
+  host: 0.0.0.0
+  
+  port: 6097
+
+}
+
+sessionDomain: ".vital.ai"
+
+cookiePrefix: "haleygenericwebapp_"
+
+cookieSecure: true
+
+#https variant of this webapp, served from https
+
+#this URL, no path, used for iframe
+websiteURL: "http://haley-generic-webapp-front.vital.ai"
+
+httpsURL: "https://haley-generic-webapp-front.vital.ai/"
+
+webappConnected: true
+
+webappURL: "https://haley-generic-webapp.vital.ai/"
+
+saasServerURL: "https://haley-saas-server.vital.ai/"
+eventbusURL: "https://haley-saas-server.vital.ai/eventbus"
+
+appID: "haley"
+
+pathPrefix: "/"
+
+
+dialogBotScriptURL: "https://haley-saas-server.vital.ai/iframe/aygfqlaziuzcztqi/index.js"
+formBotScriptURL:   "https://haley-saas-server.vital.ai/iframe/tpqktbproikiqzmy/index.js"
+
+#enabled | disabled | preset 
+accountIDMode: enabled
+
+#when accountIDMode: preset
+accountID: account-1
+
+rolesCheckEnabled: true
+
+
+haley {
+
+  username: "username"
+  password: "password"
+  endpointURI: "endpointURI"
+  channelURI: "primarychanneluri"
+  waitingListChannelURI: "waitinglistchanneluri"
+  
+}

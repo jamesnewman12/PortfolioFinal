@@ -1,0 +1,12 @@
+[Unit]
+Description=HaleyAIPortalFrontNodeJS
+After=network.target
+
+[Service]
+User=centos
+Group=centos
+ExecStart=/home/centos/haley-ai-portal-front-nodejs.sh
+Restart=always
+
+[Install]
+WantedBy=default.target

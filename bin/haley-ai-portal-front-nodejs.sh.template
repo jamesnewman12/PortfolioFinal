@@ -1,0 +1,13 @@
+#!/bin/sh
+
+### config
+
+appHome=/home/centos/haley-ai-portal-front-nodejs
+
+configFile=conf/haley-ai-portal-front-nodejs.config
+
+### end of config
+
+cd $appHome
+
+configFile=$configFile devMode=false mockui=false node index.js

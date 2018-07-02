@@ -1,0 +1,64 @@
+<form class="search-widget-form search-panel">
+
+    <input type="text" class="product-search-active product-input-text" value="" placeholder="Search here..."/>
+
+    <label id="categories-search-results" class="select-block">
+	<select class="product-search-active product-category">
+		<option value="Top">All Categories</option>
+		{{#each categories}}
+			<option value="{{id}}">{{label}}</option>
+		{{/each}}
+	</select>
+    <!--<svg class="svg-arrow">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow"></use>
+    </svg>-->
+    </label>
+
+	<label id="relevance-search-results" class="select-block">
+	<select class="product-search-active product-sort-property">
+		<option value="relevance">Relevance</option>		
+		<option value="http://vital.ai/ontology/vital-core#hasName">Name</option>		
+	</select>
+        <!--<svg class="svg-arrow">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow"></use>
+        </svg>-->
+    </label>
+
+    <label id="sort-directions-search-results" class="select-block">
+	<select class="product-search-active product-sort-direction">
+		<option value="descending">Descending</option>
+		<option value="ascending">Ascending</option>
+	</select>
+        <!--<svg class="svg-arrow">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow"></use>
+        </svg>-->
+    </label>
+
+    <!-- offsets
+
+	<label>Offset</label>
+	<input type="number" class="product-search-active product-offset" value="0" step="1" min="0" />
+	<label>Limit</label>
+	<input type="number" class="product-search-active product-limit" value="10" step="1" min="1" max="100" />
+
+	-->
+    <select class="product-search-active product-businessType">
+		<option value="All">All Business Types</option>
+		{{#each businesses}}
+			<option value="{{id}}">{{label}}</option>
+		{{/each}}
+	</select>
+    <select class="product-search-active product-country">
+		<option value="All">All Countries</option>
+		{{#each countries}}
+			<option value="{{id}}">{{label}}</option>
+		{{/each}}
+	</select>
+    <select class="product-search-active product-state">
+		<option value="All">All States</option>
+		{{#each states}}
+			<option value="{{id}}">{{label}}</option>
+		{{/each}}
+	</select>
+	<button class="button medium secondary product-search-active search-button">Search</button>
+</form>

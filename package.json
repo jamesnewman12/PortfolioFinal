@@ -1,0 +1,30 @@
+{
+  "name": "haley-ai-portal-front-nodejs",
+  "version": "1.0.0",
+  "description": "haley-ai-portal-front-nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "connect-modrewrite": "^0.9.0",
+    "grunt": "^1.0.3",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-connect": "^1.0.1",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "handlebars": "^4.0.5",
+    "uglify": "^0.1.5"
+  },
+  "dependencies": {
+    "diskspace": "^2.0.0",
+    "email-validator": "^2.0.4",
+    "hocon-parser": "^1.0.1",
+    "sockjs-client": "^1.1.5",
+    "winston": "^2.4.3",
+    "winston-daily-rotate-file": "^1.7.2"
+  }
+}
