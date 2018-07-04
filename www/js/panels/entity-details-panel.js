@@ -64,7 +64,7 @@ EntityDetailsPanel.prototype.render = function(){
         
          var header = _this.parentEl.find('.top-header');
     
-        AbstractPanel.renderTemplate(header, 'templates/header_partial.hbs', null);	
+        AbstractPanel.renderTemplate(header, 'templates/header_partial.hbs', entity);	
    
         
         
